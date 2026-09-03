@@ -1,0 +1,259 @@
+.cal-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cal-arrow {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #F0DFC8;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  color: #9a6b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+}
+.cal-month-label {
+  min-width: 140px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #5a3000;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.cal-weekday {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #9a6b3a;
+}
+
+.cal-weekday.sun { color: #E24B4A; }
+.cal-weekday.sat { color: #185FA5; }
+
+.cal-day {
+  min-height: 80px;
+  background: #fff;
+  border: 1px solid #F0DFC8;
+  border-radius: 16px;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cal-day {
+  position: relative;
+  min-height: 80px;
+  background: #fff;
+  border: 1px solid #F0DFC8;
+  border-radius: 16px;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.today-star {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+}
+
+.cal-day:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+}
+
+.cal-day.today {
+  border: 2px solid #D85A30;
+  background: #FFF5EE;
+}
+
+.cal-day.empty {
+  visibility: hidden;
+}
+
+.cal-day-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: #5a3000;
+}
+
+.cal-items {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cal-item {
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cal-item.schedule {
+  background: #6FA8DC;
+}
+
+.cal-item.task {
+  background: #F6C97F;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.event-popup {
+  width: 420px;
+  max-width: 90%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 20px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.18),
+    0 8px 20px rgba(0,0,0,0.08);
+  animation: popupShow 0.25s ease;
+}
+
+.event-popup h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #5a3000;
+}
+
+.event-popup input,
+.event-popup select,
+.event-popup textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid #F0DFC8;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.event-popup button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.event-popup button[type="submit"] {
+  background: #D85A30;
+  color: #fff;
+}
+
+.event-popup button[type="button"] {
+  background: #eee;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9aa5b1;
+}
+
+.empty-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.empty-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.schedule-card {
+  background: #E6F1FB;
+  color: #185FA5;
+}
+
+.task-card {
+  background: #FFF8E6;
+  color: #d6a447;
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.day-tasks {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #F0DFC8;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.day-tasks-header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5a3000;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #F0DFC8;
+  padding-bottom: 6px;
+}
+
+.day-task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF8F0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.day-task-title {
+  color: #5a3000;
+}
+
+.day-task-time {
+  font-size: 11px;
+  color: #9a6b3a;
+}
+
+.required{
+color: red;
+}
