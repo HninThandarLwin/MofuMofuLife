@@ -1,0 +1,204 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hiragino Maru Gothic Pro", "BIZ UDGothic", "Noto Sans JP", sans-serif;
+  background: #FDF6EE;
+  color: #3a2e25;
+  display: flex;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #FFF8F0;
+  border-right: 1.5px solid #F0DFC8;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid #F0DFC8;
+}
+.logo-icon { font-size: 22px; }
+.logo-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #b5601a;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-points {
+  margin: 14px 14px 10px;
+  background: linear-gradient(135deg, #FFE8C8, #FFD4A8);
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.points-label { font-size: 11px; color: #9a6b3a; margin-bottom: 4px; }
+.points-value { font-size: 26px; font-weight: bold; color: #D85A30; }
+
+.sidebar-pet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid #F0DFC8;
+}
+.pet-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFF0D8;
+  padding: 6px;
+  border: 2.5px solid #F6C97F;
+  transition: opacity 0.3s;
+}
+.pet-info { text-align: center; margin-top: 8px; }
+.pet-name { font-size: 13px; font-weight: bold; color: #b5601a; }
+.pet-msg  { font-size: 11px; color: #9a6b3a; margin-top: 3px; line-height: 1.4; }
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 10px;
+}
+.nav-btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #9a6b3a;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-btn:hover { background: #FFE8C8; color: #5a3000; }
+.nav-btn.active { background: #F6C97F; color: #5a3000; font-weight: bold; }
+
+.main {
+  flex: 1;
+  padding: 28px 32px;
+  overflow-y: auto;
+}
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.page-title { font-size: 22px; font-weight: bold; color: #b5601a; }
+
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1D9E75;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Hiragino Maru Gothic Pro", sans-serif;
+  padding: 10px 24px;
+  border-radius: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+.toast.show { opacity: 1; }
+
+.nav-icon{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+    margin-right:8px;
+}
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+.sidebar-nav{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.logout-btn{
+    margin-top:0;
+}
+
+/* =====================================================
+   No Pet Popup
+===================================================== */
+
+#buyPetPopUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 370px;
+    padding: 30px;
+
+    background: #fff;
+    border: 2px solid #f1500b;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+    z-index: 1000;
+}
+
+#buyPetPopUp p {
+    margin: 0 0 25px;
+
+    color: #7a4b22;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+#buyPetPopUp button {
+    padding: 10px 22px;
+    margin: 0 5px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #f6b85f;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#buyPetPopUp button:hover {
+    opacity: 0.8;
+}
+
+#buyPetPopUp button[name="cancel"] {
+    background: #ddd;
+    color: #555;
+}

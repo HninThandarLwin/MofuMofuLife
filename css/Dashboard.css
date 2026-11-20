@@ -1,0 +1,760 @@
+/* ==========================================
+   Dashboard Layout
+========================================== */
+.dashboard-container{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    min-height:100vh;
+}
+
+.dashboard-content{
+    flex:1;
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* ==========================================
+   Summary Cards
+========================================== */
+.dashboard-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    margin-bottom:24px;
+}
+
+.summary-card{
+    background:#fff;
+    border:1.5px solid #F0DFC8;
+    border-radius:18px;
+    padding:24px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.summary-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.card-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.summary-card h3{
+    font-size:15px;
+    color:#9A6B3A;
+    margin-bottom:10px;
+}
+
+.summary-number{
+    font-size:40px;
+    font-weight:700;
+    color:#D85A30;
+}
+
+/* ==========================================
+   Dashboard Grid
+========================================== */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.dashboard-card{
+    background:#fff;
+    border:1.5px solid #F0DFC8;
+    border-radius:18px;
+    padding:22px;
+    transition:.25s;
+}
+
+.dashboard-card:hover{
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+.dashboard-card h2{
+    font-size:16px;
+    color:#5A3000;
+    margin-bottom:16px;
+}
+
+/* ==========================================
+   List
+========================================== */
+
+.dashboard-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.dashboard-list li{
+    background:#FFF8F0;
+    border:1px solid #F0DFC8;
+    border-radius:12px;
+    padding:12px 15px;
+    color:#3A2E25;
+    transition:.25s;
+}
+
+.dashboard-list li:hover{
+    background:#FFF2E4;
+}
+
+.dashboard-task-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.dashboard-task-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    background:#FFF8F0;
+    border:1px solid #F0DFC8;
+    border-radius:12px;
+}
+
+.task-check{
+    width:18px;
+    height:18px;
+    accent-color:#1D9E75;
+}
+
+.task-title{
+    flex:1;
+    font-size:14px;
+    color:#3A2E25;
+}
+
+.task-date{
+    font-size:12px;
+    color:#9A6B3A;
+}
+
+.empty-msg{
+    text-align:center;
+    padding:40px;
+    color:#C0A88A;
+}
+
+/* ==========================================
+   Dashboard Table
+========================================== */
+
+.dashboard-scroll{
+    width:100%;
+    background:#fff;
+    border:2px solid #F4E3D2;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-top:25px;
+    overflow-x:auto;
+    overflow-y:auto;
+    max-height:550px;
+
+}
+
+/* Scrollbar */
+
+.dashboard-scroll::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb{
+    background:#F0CFA8;
+    border-radius:20px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-track{
+    background:#FFF8F2;
+}
+
+/* ==========================================
+   Table
+========================================== */
+
+.dashboard-scroll table{
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+}
+
+/* Header */
+
+.dashboard-scroll thead{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#FFF5EC;
+}
+
+.dashboard-scroll th{
+    padding:18px;
+    font-size:15px;
+    font-weight:700;
+    color:#B15A19;
+    text-align:left;
+    border-bottom:2px solid #F4E3D2;
+    white-space:nowrap;
+}
+
+/* Body */
+.dashboard-scroll td{
+    padding:18px;
+    font-size:14px;
+    color:#555;
+    border-bottom:1px solid #F8E8DB;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+/* Description */
+
+.dashboard-scroll td.description{
+    white-space:normal;
+    min-width:220px;
+}
+
+/* Hover */
+
+.dashboard-scroll tbody tr{
+    transition:.25s;
+}
+
+.dashboard-scroll tbody tr:hover{
+    background:#FFF9F4;
+}
+
+/* Zebra */
+
+.dashboard-scroll tbody tr:nth-child(even){
+    background:#FFFCF8;
+}
+
+.dashboard-scroll tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/* ==========================================
+   Type Badge
+========================================== */
+
+.type-badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.type-badge.todo{
+    background:#FFF3C4;
+    color:#B7791F;
+}
+
+.type-badge.schedule{
+    background:#D9F2FF;
+    color:#1976D2;
+}
+
+.type-badge.event{
+    background:#E8F9E8;
+    color:#1D9E75;
+}
+
+/* ==========================================
+   Complete Button
+========================================== */
+
+.complete-btn{
+    min-width:110px;
+    border:none ;
+    border-radius:10px;
+    padding:9px 15px;
+    background:#FFE8C9;
+    color:#B15A19;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.complete-btn:hover{
+    background:#FFD7A3;
+}
+
+.complete-btn.completed{
+    background:#DDF8E8;
+    color:#1D9E75;
+}
+
+.complete-btn.completed:hover{
+    background:#C9F3D8;
+}
+
+/* ==========================================
+   Action Button
+========================================== */
+
+.action-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#7A5A3A;
+    font-size:22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.action-btn:hover{
+    background:#FFF3E3;
+    color:#D85A30;
+}
+
+.action-btn:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+/* ==========================================
+   Status Color
+========================================== */
+
+.status-complete{
+    color:#1D9E75;
+    font-weight:700;
+}
+
+.status-pending{
+
+    color:#D85A30;
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   Modal
+========================================== */
+
+.modal-content{
+
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.modal-header{
+
+    background:#FFF8F0;
+    border-bottom:1px solid #F0DFC8;
+    padding:20px 24px;
+
+}
+
+.modal-title{
+
+    font-size:22px;
+    font-weight:700;
+    color:#5A3000;
+
+}
+
+.modal-body{
+
+    padding:25px;
+
+}
+
+.modal-footer{
+
+    border-top:1px solid #F0DFC8;
+    padding:18px 25px;
+
+}
+
+/* ==========================================
+   Form
+========================================== */
+
+.modal-body label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+    color:#8A5C2F;
+
+}
+
+.modal-body input,
+.modal-body select,
+.modal-body textarea{
+
+    width:100%;
+
+    border:1.5px solid #F0DFC8;
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    transition:.25s;
+
+    background:#fff;
+
+}
+
+.modal-body textarea{
+
+    resize:none;
+
+}
+
+.modal-body input:focus,
+.modal-body select:focus,
+.modal-body textarea:focus{
+
+    border-color:#D85A30;
+
+    box-shadow:0 0 0 4px rgba(216,90,48,.15);
+
+    outline:none;
+
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.btn-save{
+
+    background:#D85A30;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:10px 30px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.btn-save:hover{
+
+    background:#C84E27;
+
+}
+
+.btn-cancel{
+
+    background:#F5F5F5;
+
+    color:#555;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:10px 25px;
+
+    transition:.25s;
+
+}
+
+.btn-cancel:hover{
+
+    background:#E8E8E8;
+
+}
+
+/* ==========================================
+   Animation
+========================================== */
+
+.summary-card,
+.dashboard-card,
+.dashboard-scroll{
+
+    animation:fadeUp .4s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width:992px){
+
+    .dashboard-summary{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .summary-number{
+
+        font-size:32px;
+
+    }
+
+    .dashboard-scroll{
+
+        max-height:450px;
+
+    }
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:768px){
+
+    .dashboard-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .summary-card{
+
+        padding:18px;
+
+    }
+
+    .dashboard-card{
+
+        padding:16px;
+
+    }
+
+    .summary-number{
+
+        font-size:28px;
+
+    }
+
+    .card-icon{
+
+        font-size:30px;
+
+    }
+
+    .dashboard-scroll{
+
+        overflow-x:auto;
+
+    }
+
+    .dashboard-scroll table{
+
+        min-width:900px;
+
+    }
+
+    .dashboard-scroll th,
+    .dashboard-scroll td{
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+
+    .complete-btn{
+
+        min-width:90px;
+
+        font-size:12px;
+
+        padding:8px 12px;
+
+    }
+
+    .action-btn{
+
+        width:36px;
+
+        height:36px;
+
+        font-size:18px;
+
+    }
+
+    .modal-body{
+
+        padding:18px;
+
+    }
+
+    .modal-header,
+    .modal-footer{
+
+        padding:16px;
+
+    }
+
+}
+
+/* ==========================================
+   Small Phone
+========================================== */
+
+@media (max-width:480px){
+
+    .dashboard-content{
+
+        padding:12px;
+
+    }
+
+    .summary-card{
+
+        padding:15px;
+
+    }
+
+    .summary-card h3{
+
+        font-size:13px;
+
+    }
+
+    .summary-number{
+
+        font-size:24px;
+
+    }
+
+    .dashboard-card h2{
+
+        font-size:15px;
+
+    }
+
+    .dashboard-scroll{
+
+        border-radius:15px;
+
+    }
+
+}
+
+.status-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+
+    min-width:105px;
+    height:38px;
+
+    border-radius:999px;
+
+    border:1.5px solid transparent;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+/* Pending */
+
+.status-btn.pending{
+
+    background:#FFF4E8;
+    color:#F27A1A;
+    border-color:#FFE1BD;
+
+}
+
+.status-btn.pending:hover{
+
+    background:#FFEBD4;
+    transform:translateY(-2px);
+
+}
+
+/* Completed */
+
+.status-btn.completed{
+
+    background:#EDF9F1;
+    color:#1AA053;
+    border-color:#A7E2B8;
+
+}
+
+.status-btn.completed:hover{
+
+    background:#DFF4E6;
+    transform:translateY(-2px);
+
+}
+
+/* Icon */
+
+.status-btn .icon{
+
+    font-size:15px;
+
+}

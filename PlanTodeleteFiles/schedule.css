@@ -1,0 +1,11 @@
+.schedule-box {
+  background: white;
+  border: 1.5px solid #F0DFC8;
+  border-radius: 16px;
+  padding: 20px;
+}
+.schedule-box h2 {
+  font-size: 15px;
+  color: #5a3000;
+  margin-bottom: 12px;
+}

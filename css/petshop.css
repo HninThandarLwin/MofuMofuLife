@@ -1,0 +1,319 @@
+/* ===== リセット ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 全体 ===== */
+body {
+  font-family: "Hiragino Maru Gothic Pro", "BIZ UDGothic", "Noto Sans JP", sans-serif;
+  background: #FDF6EE;
+  color: #3a2e25;
+  display: flex;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* ===== サイドバー ===== */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #FFF8F0;
+  border-right: 1.5px solid #F0DFC8;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-pet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;       
+  padding: 12px;
+  border-bottom: 1px solid #F0DFC8;
+  text-align: center;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid #F0DFC8;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 22px;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #b5601a;
+}
+
+/* ===== ポイント表示 ===== */
+.sidebar-points {
+  margin: 14px;
+  background: linear-gradient(135deg, #FFE8C8, #FFD4A8);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.points-label {
+  font-size: 11px;
+  color: #9a6b3a;
+}
+
+.points-value {
+  font-size: 26px;
+  font-weight: bold;
+  color: #D85A30;
+}
+
+/* ===== ペット表示 ===== */
+.sidebar-pet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #F0DFC8;
+  text-align: center;
+}
+
+.pet-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #FFF0D8;
+  padding: 6px;
+  border: 2.5px solid #F6C97F;
+  transition: opacity 0.3s;
+}
+
+.pet-info {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.pet-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #b5601a;
+}
+
+.pet-msg {
+  font-size: 11px;
+  color: #9a6b3a;
+}
+
+/* ===== ナビ ===== */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+}
+
+.nav-btn {
+  width: 100%;
+  text-align: left;
+
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+
+  color: #9a6b3a;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-btn:hover {
+  background: #FFE8C8;
+}
+
+.nav-btn.active {
+  background: #F4B96A;
+  color: white;
+  font-weight: bold;
+}
+
+/* ===== メイン ===== */
+.main {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b5601a;
+}
+
+/* ===== トースト ===== */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1D9E75;
+  color: white;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+
+/* ポイント表示 */
+.shop-points-info {
+  font-size: 13px;
+  color: #9a6b3a;
+  background: #FFE8C8;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* 説明 */
+.shop-action-btn {
+  margin-top: 6px;
+  padding: 4px 10px;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  background: #FFF3E0;
+  color: #9a6b3a;
+
+  border: none;
+  border-radius: 999px;
+
+  display: inline-block;
+  cursor: pointer;
+
+  transition: background 0.15s, color 0.15s;
+}
+
+.shop-action-btn.owned {
+  background: #06d6a0;
+  color: white;
+  font-weight: bold;
+}
+
+.shop-action-btn.selected {
+  background: #118ab2;
+  color: white;
+  font-weight: bold;
+}
+
+/* hover */
+.shop-action-btn.buy:hover {
+  background: #FFD39A;
+}
+
+.shop-desc {
+  font-size: 13px;
+  color: #9a6b3a;
+  margin-bottom: 16px;
+}
+
+/* グリッド */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* カード */
+.pet-card {
+  background: white;
+  border: 2px solid #F0DFC8;
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+/* hover（未ロックのみ） */
+.pet-card:hover:not(.lock) {
+  border-color: #D85A30;
+  transform: translateY(-2px);
+}
+
+/* 選択中 */
+.pet-card.selected {
+  border-color: #D85A30;
+  border-width: 3px;
+  background: #FFF5EE;
+}
+
+/* ロック */
+.pet-card.locked {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 画像 */
+.pet-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFF8F0;
+  padding: 4px;
+}
+
+/* 名前 */
+.pet-card-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #5a3000;
+  margin-top: 8px;
+}
+
+/* コスト */
+.pet-card-cost {
+  font-size: 12px;
+  color: #D85A30;
+  margin-top: 3px;
+}
+
+/* ロック表示 */
+.pet-card-lock {
+  font-size: 11px;
+  color: #9a6b3a;
+  margin-top: 2px;
+}
